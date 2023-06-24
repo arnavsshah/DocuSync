@@ -6,7 +6,6 @@ from config import URI
 client = MongoClient(URI, server_api=ServerApi('1'))
 
 db = client["docusync"]
-collection = db['ques_ans']
 
 
 # try:
