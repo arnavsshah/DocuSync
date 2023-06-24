@@ -32,7 +32,7 @@ def post_questions_and_answers():
     answer_prefix = 'The answer is: '
     final_prompt = 'Update my document with this information and return the whole text'
 
-    with open('documentations/gmail_password_reset.txt', 'r') as f:
+    with open('documentations/gmail.txt', 'r') as f:
         doc = f.read()
 
     question = request.form.get('question')
