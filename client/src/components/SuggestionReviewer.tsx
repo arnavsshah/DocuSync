@@ -1,30 +1,12 @@
 import { Button, Group, Paper, Space } from "@mantine/core";
 import { DocDiffViewer } from "./DocDiffViewer";
+import { Suggestion } from "../util/types";
 
-const oldCode = `
-const a = 10
-const b = 10
-const c = () => console.log('foo')
-
-if(a > 10) {
-  console.log('bar')
-}
-
-console.log('done')
-`;
-const newCode = `
-const a = 10
-const boo = 10
-
-if(a === 10) {
-/Users/anderslie/Sync/Code/hackathons/gen_ai/DocuSync/client/src/components  console.log('bar')
-}
-`;
-
-export const SuggestionReviewer = () => {
+export const SuggestionReviewer = (props: {suggestion: Suggestion}) => {
+    const { suggestion } = props;
     return (<>
         <Paper shadow="md" p="md" style={{flexGrow: 1}}>
-            <DocDiffViewer oldText={oldCode} newText={newCode}></DocDiffViewer>
+            <DocDiffViewer oldText={suggestion.oldDocText} newText={suggestion.newDocText}></DocDiffViewer>
             <Space h="xl"/>
             <Group>
                 <Button color='green'>Approve Change</Button>
