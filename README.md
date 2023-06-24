@@ -16,9 +16,10 @@ Create a .env file within the server sub-directory with the following format
 ```
 USERNAME = "<username>"
 PASSWORD = "<password>"
+OPENAI_API_KEY = "<api_key>"
 ```
 
-Register and create a database on MonogoDB Atlas. For this project, the name of the database is 'docusync' and the names of the collections are 'ques_ans' & 'suggestions'
+Register and create a database on MonogoDB Atlas. For this project, the name of the database is 'docusync' and the name of the collection is 'suggestions'
 
 To run the backend server
 ```
