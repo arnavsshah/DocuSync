@@ -10,6 +10,6 @@ def suggestions():
 
     data = []
     for obj in cursor:
-        data.append(obj['new_doc'])
+        data.append(obj)
 
     return data
