@@ -18,6 +18,7 @@ USERNAME = "<username>"
 PASSWORD = "<password>"
 ```
 
+Register and create a database on MonogoDB Atlas. For this project, the name of the database is 'docusync' and the names of the collections are 'ques_ans' & 'suggestions'
 
 To run the backend server
 ```
