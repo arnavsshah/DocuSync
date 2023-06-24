@@ -1,0 +1,34 @@
+This is the updated text:
+
+Sign in:
+1. On your computer, go to Gmail.
+2. Enter your Google Account email or phone number and password. If information is already filled in and you have to sign in to a different account, click Use another account. If you get a page that describes Gmail instead of the sign-in page, at the top right of the page, click Sign in. 
+Tip: If you sign in to a public computer, make sure to sign out before you leave the computer. Learn how to sign in on a device that's not yours.
+
+Mail settings:
+1. On your computer, open Mail (previously called Inbox).
+2. At the top right, click Settings (gear icon) and select See all settings.
+3. Click the Mail tab.
+4. In the "Default mail type" section, select Default. Note: To hide all tabs, select another mail type.
+5. In the "Categories" section, check the boxes of tabs you want to show. Note: You can't make new tabs, you can only show or hide existing ones.
+6. Scroll to the bottom, then click Save Changes.
+Tip: If you've turned on notifications, you'll only get notifications about emails in your Primary category. 
+
+Move an email to a new category:
+1. Drag an email to a category tab to add it.
+2. To move all future emails from that sender to that category, on the bottom left pop up notification, click Yes.
+
+Can't sign in to your Google account:
+If you can't sign in to your Google account in Mail, Google Drive, Google Play, or elsewhere, select the issue that most closely applies to you. Follow the instructions for help getting back in to your account. 
+
+You forgot your password:
+To reset your password:
+1. Follow the steps to recover your Google account or Gmail.
+- You'll be asked some questions to confirm it's your account. Answer the questions as best as you can. If you have trouble, try the tips to complete account recovery steps.
+2. Reset your password when prompted. Choose a strong password that you haven't already used with this account. Learn how to create a strong password.
+Note: If there's something different about how you're signing in, you might be asked to take more steps to confirm it's your account. Still can't get in? Consider creating a replacement Google Account.
+
+
+
+
+Document was last updated on:2023-06-24
