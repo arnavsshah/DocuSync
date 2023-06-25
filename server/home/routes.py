@@ -14,6 +14,9 @@ def get_documentation():
     data = []
 
     for documentation in cursor:
-        data.append(documentation['doc'])
+        if 'new_doc' in documentation:
+            data.append(documentation['new_doc'])
+        else:
+            data.append(documentation['doc'])
 
     return {'data': data}

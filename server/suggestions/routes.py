@@ -26,7 +26,7 @@ def get_suggestions():
 def post_suggestions():
 
     db['documentation'].update_one(
-        {'doc_id': int(request.json['doc_id'])},  {'$set': {"doc": request.json['new_doc']}}
+        {'doc_id': int(request.json['doc_id'])},  {'$set': {"new_doc": request.json['new_doc']}}
     )
 
     db['suggestions'].update_one(
