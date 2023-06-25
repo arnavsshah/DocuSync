@@ -66,10 +66,10 @@ def post_answers():
     suggestion = suggestions_collection.find_one({'suggestion_id': request.form.get('suggestion_id')})
     documentation = documentations_collection.find_one({'doc_id': suggestion['doc_id']})
 
-    init_prompt = "Update the following text only in areas where there are changes required based on the question and answer following it: "
+    init_prompt = "Update the following markdown text only in areas where there are changes required based on the question and answer following it: "
     question_prefix = 'The question is: '
     answer_prefix = 'The answer is: '
-    final_prompt = 'Update my document with this information and return the whole text. Do not change anything other than what is specific to the question.'
+    final_prompt = 'Update my document with this information and return the whole markdown text. Do not change anything other than what is specific to the question.'
 
     prompt = init_prompt + documentation['doc'] + question_prefix + suggestion['question'] + answer_prefix + answer + final_prompt
 

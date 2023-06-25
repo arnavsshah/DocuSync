@@ -11,7 +11,7 @@ After 30 days, admins have 25 more days to restore deleted messages from the Adm
 After these additional 25 days, messages are permanently deleted from the Admin console, and admins can't restore them.
 
 Retrieve data from Vault
-If your organization uses Google Vault, you might be able to retrieve data older than 25 days. If the data was subject to retention rules or holds, you can search for and export the retained data. You can’t directly restore the data to the user’s Gmail account. For details, go to Get started with Vault search and export.
+If your organization uses Google Vault, you might be able to retrieve data older than 25 days. If the data was subject to retention rules or holds, you can search for and export the retained data. You can't directly restore the data to the user's Gmail account. For details, go to Get started with Vault search and export.
 
 Restore Gmail data from the Admin console
 Important: 
@@ -20,26 +20,25 @@ After you click Restore, as described in Step 7, the restore process can't be st
 Depending on the amount of data being restored, it can take up several days for restored data and messages to appear in the user's account.
 If your organization uses Google Vault, ask a Vault user to place the user's mail data on hold. A hold prevents the data from being deleted or purged before the user can get it.
 Sign in to your Google Admin console.
-Sign in using an administrator account, not your current account ahmadtahera.TA@gmail.com
+Sign in using an administrator account, not your current account
 
-In the Admin console, go to Menu ""and then"" Directoryand thenUsers.
+In the Admin console, go to Menu and then Directory and then Users.
 In the Users list, find the user. If you need help, go to Find a user account.
 Point to the user and click More optionsand thenRestore data.
-""
 
-  You can also find this option at the left of the user's account page, under More "".
+You can also find this option at the left of the user's account page, under More.
 Select the date range for the data you want to restore, from within the last 25 days.
 Select the type of data you want to restore: Gmail.
 Click Restore.
 Confirm data was restored
-Check the user’s Gmail inbox for restored email messages.
+Check the user's Gmail inbox for restored email messages.
 
 Data you can restore
 You can:
 
 Restore data that was permanently deleted within the past 25 days.
 Select a date range to restore data that was deleted within that range. 
-Check a user’s Gmail inbox to confirm the data is restored.
+Check a user's Gmail inbox to confirm the data is restored.
 Data you can't restore
 You can't restore:
 

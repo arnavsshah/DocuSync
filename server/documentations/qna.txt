@@ -12,8 +12,8 @@ Answer 1: The new update suggests that all previous deadlines for permanent dele
 
 
 Topic: Cancel google workspace
-Question 1: I want to halt my subscriptions for 2 months and not permanently
-Answer 1: The flexible plan now offers pause your subscription options where you can save your data and resume whenever, this was not available earlier 
+Question 1: I canceled my google workplace subscription but do not have access to Google Ads.
+Answer 1: They recently changed their policy. So you will lose access to Google Ads.
 
 
 Question 2: How will the users storage be affected on cancellation?
