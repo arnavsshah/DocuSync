@@ -19,7 +19,14 @@ PASSWORD = "<password>"
 OPENAI_API_KEY = "<api_key>"
 ```
 
-Register and create a database on MonogoDB Atlas. For this project, the name of the database is 'docusync' and the name of the collection is 'suggestions'
+Register and create a database on MonogoDB Atlas. For this project, the name of the database is 'docusync' and the name of the collection is 'suggestions'.
+
+Replace the URI in `config.py` with your own database URI. 
+
+```
+python populate_db.py
+```
+
 
 To run the backend server
 ```

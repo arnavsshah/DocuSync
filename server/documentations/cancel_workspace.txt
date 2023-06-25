@@ -1,0 +1,33 @@
+Cancel Google Workspace
+Cancel a Google Workspace subscription
+If you purchased your service from a reseller, go here instead |  Do I have a reseller?
+To cancel Essentials edition, go instead to Cancel Essentials.
+To stop using Google Workspace at your organization and stop being billed for it, cancel your subscription.
+
+Impact to services after you cancel Google Workspace
+You lose access to core Google Workspace services, such as Gmail, Calendar, Meet, and more.
+You still have access to Additional Google services, such as YouTube, Google Photos, and Google Ads.
+If you have Cloud Identity, you will still have access to certain core Google Workspace services, such as Google Drive, Docs, Sheets, Slides, and Keep, but with these caveats:
+Administrative controls and settings that are available only with Google Workspace will be removed. These controls include audits, reporting, sharing policies, and alerts. For information on file sharing permissions for Cloud Identity users, go to Drive file sharing permissions.
+Your users' storage capacity will be reduced to 15 GB. If your users purchased additional storage, it’s no longer available.
+Shared drives—After you cancel, you can view shared drive data, but you can’t edit, move, or delete the data or drives.
+When billing stops
+If you’re billed on a monthly Flexible Plan, canceling Google Workspace immediately stops you from incurring new charges for Google Workspace services. If you’re on an Annual/Fixed-Term Plan, you’ll be charged for the remaining balance of your contract.
+You might still be charged for services used since your last payment. Learn more below
+Canceling during 14-day free trial
+You can cancel your Google Workspace subscription during your free trial and you won't be charged. Your subscription will be automatically canceled during your free trial if you do not:
+Verify your domain within 9 days of starting your trial.
+Set up billing by the end of the trial.
+Step 1: Save your data (such as emails, documents)
+After you cancel your Google Workspace subscription, your users' Google Workspace data will be deleted and can’t be restored.
+Before you cancel your Google Workspace subscription, download any user data you want to save. This includes Gmail messages, Google Calendar events, Google Chat messages, and files stored in Google Drive.
+The easiest way to download and export your users' data is to use the Data Export tool.
+Note that canceling Google Workspace doesn’t remove user accounts, groups, or your organizational structure. These items remain unless you delete your organization’s Google Account.
+Step 2: Cancel your Google Workspace subscription
+Here’s how to cancel Google Workspace and stop being billed for your subscription. Cancel your subscription after exporting any user data you want to save. Read about charges after you cancel.
+1.Sign in to your Google Admin console.Sign in using an administrator account, not your current account ahmadtahera.TA@gmail.com
+2.In the Admin console, go to Menu  BillingSubscriptions.
+3.Click your subscriptionMoreCancel Subscription.Depending on your subscription, you may not need to click More.
+4.Select a reason for cancelingclick Continue.
+5.Check the box to confirm you read the information and want to continue.
+6.Enter your email addressclick Cancel My Subscription.
