@@ -1,4 +1,4 @@
-import { Flex, LoadingOverlay, Tabs, Title } from '@mantine/core';
+import { AppShell, Container, Flex, Header, LoadingOverlay, Space, Tabs, Title } from '@mantine/core';
 import { SuggestionReviewer } from '../components/SuggestionReviewer';
 import { useEffect, useState } from 'react';
 import { Suggestion } from '../util/types';
@@ -43,21 +43,28 @@ export const DocuSync = () => {
         });
     }, [setSuggestions]);
     return (<>
-        <Title>DocuSync</Title>
-        <Flex>
-            <Tabs orientation="vertical" defaultValue='0' onTabChange={setActiveTab}>
-                <Tabs.List>
-                    {suggestions.map((suggestion, idx) => (
-                        <Tabs.Tab value={`${idx}`}>Suggestion {idx} ({suggestion.question})</Tabs.Tab>
-                    ))}
-                </Tabs.List>
-            </Tabs>
+        <AppShell padding="md"
+            header={<Header height={60}>
+                <Container py="sm" px="sm">
+                    <Title>DocuSync</Title>
+                </Container>
+            </Header>}
+        >
+            <Flex>
+                <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}>
+                    <Tabs.List>
+                        {suggestions.map((suggestion, idx) => (
+                            <Tabs.Tab value={`${idx}`}>Suggestion {idx} ({suggestion.question})</Tabs.Tab>
+                        ))}
+                    </Tabs.List>
+                </Tabs>
 
-            {isLoaded ? 
-                suggestions.length ? 
-                    <SuggestionReviewer suggestion={suggestions[activeSuggestionIdx]}/>
-                : <Title>No more suggestions!</Title>
-            : <LoadingOverlay visible={true}/>}
-        </Flex>
+                {isLoaded ? 
+                    suggestions.length ? 
+                        <SuggestionReviewer suggestion={suggestions[activeSuggestionIdx]}/>
+                    : <Title>No more suggestions!</Title>
+                : <LoadingOverlay visible={true}/>}
+            </Flex>
+        </AppShell>
     </>);
 }
