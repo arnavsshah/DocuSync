@@ -108,7 +108,7 @@ export const DocuSync = () => {
                 <Paper py="sm" px="sm" shadow='xs'>
                     <Flex style={{alignItems: 'center'}}>
                         <Burger opened={false} style={{marginRight: '8px'}}/>
-                        <Title>DocuSync</Title>
+                        <Title inline>Docu</Title><Title inline color="blue">Sync</Title>
                         <Space style={{flexGrow: 1}}></Space>
                         <Paper shadow="xs" py="4px" px="8px" radius="md">
                             <Group>
@@ -121,7 +121,7 @@ export const DocuSync = () => {
             </Header>
             }
         >   
-            <Banner text="Welcome to DocuSync!\nBelow you can see suggestions to existing documentation based on community activity.\nOnce you review each suggestion, click Approve to make the change to the documentation, or Reject to remove the suggestion."/>
+            <Banner/>
             <Flex>
                 <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}
                     style={{

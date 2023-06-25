@@ -1,26 +1,18 @@
 import { useState } from 'react';
 import { Paper, Text, Button } from '@mantine/core';
 
-const Banner = (props: { text: string }) => {
-    //const Banner = (props: { children: string }) => {    
-    //const lines = props.children.split('\\n');
-    const lines = props.text.split('\\n');
-
+const Banner = () => {
     const [isOpen, setIsOpen] = useState(true);
 
     if (isOpen) {
         return (
-            <Paper py="sm" px="sm" shadow="sm" style={{ marginBottom: '8px' }} bg="blue">
-            {lines.map((line, index) => (<>
-                <Text key={index} size="md" weight={500} color="white" style={{ display: 'block' }}>
-                {line}
+            <Paper py="sm" px="sm" shadow="sm" style={{ marginBottom: '8px', display:'flex', alignItems: 'center'}} bg="blue">
+                <Text size="md" weight={500} color="white" style={{flexGrow: 1}}>
+                    Welcome to DocuSync! We’ve identified 3,216 opportunities to improve the Gmail Help Center. You can review and edit our suggestions below.
                 </Text>
-                </>))}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1rem' }}>
                 <Button onClick={() => {setIsOpen(false);}} variant="light" size="sm">
-                Close
+                Dismiss
                 </Button>
-            </div>
             </Paper>
         );
     } else {
