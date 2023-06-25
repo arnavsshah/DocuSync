@@ -25,7 +25,7 @@ if(a === 10) {
 `;
 
 const fetchSuggestions = async () => {
-    const data = await axios.get('http://localhost:5000/suggestions');
+    const data = await axios.get('http://localhost:5000/suggestions/');
     //const data = await axios.get('http://127.0.0.1:5000/suggestions');
     //const data = await fetch('http://127.0.0.1:5000/suggestions');
     console.log(data);
