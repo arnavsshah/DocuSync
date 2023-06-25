@@ -30,4 +30,4 @@ Here’s how to cancel Google Workspace and stop being billed for your subscript
 3.Click your subscriptionMoreCancel Subscription.Depending on your subscription, you may not need to click More.
 4.Select a reason for cancelingclick Continue.
 5.Check the box to confirm you read the information and want to continue.
-6.Enter your email addressclick Cancel My Subscription.
+6.Enter your email address, click Cancel My Subscription.

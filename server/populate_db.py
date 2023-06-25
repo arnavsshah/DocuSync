@@ -21,11 +21,10 @@ with open('documentations/cancel_workspace.txt') as f:
 
 
 
-doc_ids = [1, 1, 2, 2, 3, 3]
+doc_ids = [1, 1, 2, 3, 3]
 questions = ['I cannot find the Inbox Button?',
             'How many security questions will I be asked in order to reset my password?',
             'How long do deleted emails stay in the Trash?',
-            'Can I recover draft emails?',
             'I want to halt my subscriptions for 2 months and not permanently',
             'How will the users storage be affected on cancellation?']
 

@@ -1,9 +1,8 @@
 from flask import request, redirect
+from flask_cors import cross_origin
 
 from suggestions import bp
 from db import db
-
-from flask_cors import cross_origin
 
 
 @bp.route('/', methods=['GET'])

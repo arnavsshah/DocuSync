@@ -5,18 +5,17 @@ Answer 1: The new update suggests that the Inbox button was changed to Mail butt
 Question 2: How many security questions will I be asked in order to reset my password?
 Answer 2:    The new update suggests the user will be asked 3 questions.
 
+
 Topic: Restore a user's permanently deleted email
 Question 1: How long do deleted emails stay in the Trash?
 Answer 1: The new update suggests that all previous deadlines for permanent deletion of Mails from Trash are extended by 5 days. 
 
-Question 2: Can I recover draft emails?
-Answer 2: The draft emails can be recovered before 24 hours of deletion.
 
-
-Topic: Restore a user's permanently deleted email
+Topic: Cancel google workspace
 Question 1: I want to halt my subscriptions for 2 months and not permanently
 Answer 1: The flexible plan now offers pause your subscription options where you can save your data and resume whenever, this was not available earlier 
 
+
 Question 2: How will the users storage be affected on cancellation?
-Answer 2: The new update suggests that the storage capacity upon cancellation will reduce to 12GB, replace in place the old info with the new information on the document 
+Answer 2: The new update suggests that the storage capacity upon cancellation will reduce to 12GB.
 
