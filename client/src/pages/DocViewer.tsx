@@ -3,7 +3,7 @@ import { GmailHelpAppBar } from '../components/GmailHelpAppBar';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Paper } from '@mui/material';
+import { CircularProgress, Paper } from '@mui/material';
 
 const fetchDocs = async (): Promise<string[]> => {
     const resp = await axios.get('http://localhost:5000/');
@@ -25,11 +25,15 @@ export const DocViewer = () => {
     return (<>
         <GmailHelpAppBar tabValue={0}/>
         <img style={{width: '100%'}} src="stolen_help_center_header.png"></img>
-        {/* <Title>Documentation</Title> */}
+        
+        {isLoaded ?
         <Paper sx={{padding: '8px', paddingLeft: '16px', paddingRight: '16px'}}>
             {docs.map((doc) => (
                 <ReactMarkdown>{doc}</ReactMarkdown>
             ))}
         </Paper>
+        :
+        <CircularProgress/>
+        }
     </>);
 }

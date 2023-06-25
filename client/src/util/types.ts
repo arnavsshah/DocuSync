@@ -10,5 +10,5 @@ export interface Suggestion {
 export interface QA {
     question: string,
     answer?: string,
-    id: string,
+    suggestion_id: string,
 }

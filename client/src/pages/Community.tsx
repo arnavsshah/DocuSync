@@ -32,7 +32,7 @@ export const Community = () => {
         {isLoaded ? 
         <div style={{padding: '16px'}}>
             {posts.map((post) => (
-                <QuestionAnswer question={post.question} answer={post.answer}/>
+                <QuestionAnswer qa={post}/>
             ))}
         </div>
         :
