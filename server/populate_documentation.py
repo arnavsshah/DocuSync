@@ -12,7 +12,7 @@ openai.api_key = OPENAI_API_KEY
 documentations_collection = db['documentation']
 suggestions_collection = db['suggestions']
 
-init_prompt = "Generate markdown code for the following text. Do not change any text or add any images. "
+init_prompt = "Generate markdown code for the following documentation text. Do not change any text or add any images. Make sure you do not miss out on any text and all text is present as before. The documentation is: "
 
 with open('documentations/sign_in.txt') as f:
     doc = f.read()

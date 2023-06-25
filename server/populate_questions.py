@@ -23,7 +23,7 @@ for doc_id, question in zip(doc_ids, questions):
     to_insert = {
         'suggestion_id': str(uuid.uuid4()),
         'question': question,
-        'date': datetime.today().replace(microsecond=0),
+        'date': datetime.today(),
         'doc_id': doc_id,
         'pending': True
     }

@@ -17,11 +17,12 @@ openai.api_key = OPENAI_API_KEY
 @cross_origin()
 def get_questions_and_answers():
 
-    cursor = db['suggestions'].find().sort('date', -1)
+    cursor = db['suggestions'].find().sort('date', 1)
 
     data = []
      
     for obj in cursor:
+        print(obj["question"])
         data.append(
             {"question": obj["question"],
              "answer": obj['answer'] if 'answer' in obj else None,
@@ -66,10 +67,10 @@ def post_answers():
     suggestion = suggestions_collection.find_one({'suggestion_id': request.json['suggestion_id']})
     documentation = documentations_collection.find_one({'doc_id': suggestion['doc_id']})
 
-    init_prompt = "Update the following markdown text only in areas where there are changes required based on the question and answer following it: "
+    init_prompt = "Update the following product documentation written in markdown text, only in areas where there are changes required based on the question and answer following it and return the entire documentation which would include the changes. The documentation is: "
     question_prefix = 'The question is: '
     answer_prefix = 'The answer is: '
-    final_prompt = 'Update my document with this information and return the whole markdown text. Do not change anything other than what is specific to the question.'
+    final_prompt = 'Do not append the changes to the original documentation but instead, update the text in the original documentation that is altered. Be succinct. Do not change anything other than what is specific to the question. Additionally, do not explicitly mention the question and answer in the returned text.'
 
     prompt = init_prompt + documentation['doc'] + question_prefix + suggestion['question'] + answer_prefix + answer + final_prompt
 
