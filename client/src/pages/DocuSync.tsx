@@ -1,4 +1,4 @@
-import { AppShell, Flex, Header, LoadingOverlay, Paper, Tabs, Title } from '@mantine/core';
+import { AppShell, Flex, Header, LoadingOverlay, Paper, Tabs, Title, Text, Burger, Group, Skeleton, Space, Avatar } from '@mantine/core';
 import { SuggestionReviewer } from '../components/SuggestionReviewer';
 import { useEffect, useState } from 'react';
 import { Suggestion } from '../util/types';
@@ -104,16 +104,35 @@ export const DocuSync = () => {
         <AppShell padding="md"
             header={<Header height={60}>
                 <Paper py="sm" px="sm" shadow='xs'>
-                    <Title>DocuSync</Title>
+                    <Flex style={{alignItems: 'center'}}>
+                        <Burger opened={false} style={{marginRight: '8px'}}/>
+                        <Title>DocuSync</Title>
+                        <Space style={{flexGrow: 1}}></Space>
+                        <Paper shadow="xs" py="4px" px="8px" radius="md">
+                            <Group>
+                            <Avatar color='blue'></Avatar>
+                            <Title order={5}>Welcome, Anders!</Title>
+                            </Group>
+                        </Paper>
+                    </Flex>
                 </Paper>
             </Header>}
         >
             <Flex>
-                <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}>
+                <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}
+                    style={{
+                        //backgroundColor: '#000000'
+                    }}
+                >
                     <Tabs.List>
                         {suggestions.map((suggestion, idx) => (
-                            <Tabs.Tab value={`${idx}`}>Suggestion {idx}</Tabs.Tab>
-                            // ({suggestion.question})
+                            <Tabs.Tab value={`${idx}`}>
+                                {idx === activeSuggestionIdx ?
+                                <Text color='blue' fw={700}>Suggestion {idx}</Text>
+                                :
+                                <Text>Suggestion {idx}</Text>
+                                }
+                            </Tabs.Tab>
                         ))}
                     </Tabs.List>
                 </Tabs>
