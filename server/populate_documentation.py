@@ -19,7 +19,7 @@ with open('documentations/sign_in.txt') as f:
     prompt = init_prompt + doc
 
     conversation = [{"role": "user", "content": prompt}]
-    markdown_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation).choices[0].message.content
+    markdown_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation, temperature=0.2).choices[0].message.content
 
     documentations_collection.insert_one({'doc_id': 1, 'doc': markdown_doc})
 
@@ -27,7 +27,7 @@ with open('documentations/restore_data.txt') as f:
     doc = f.read()
     prompt = init_prompt + doc
     conversation = [{"role": "user", "content": prompt}]
-    markdown_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation).choices[0].message.content
+    markdown_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation, temperature=0.2).choices[0].message.content
 
     documentations_collection.insert_one({'doc_id': 2, 'doc': markdown_doc})
 
@@ -35,7 +35,7 @@ with open('documentations/cancel_workspace.txt') as f:
     doc = f.read()
     prompt = init_prompt + doc
     conversation = [{"role": "user", "content": prompt}]
-    markdown_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation).choices[0].message.content
+    markdown_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation, temperature=0.2).choices[0].message.content
 
     documentations_collection.insert_one({'doc_id': 3, 'doc': markdown_doc})
 
