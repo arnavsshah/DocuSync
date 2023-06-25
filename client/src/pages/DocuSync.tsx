@@ -1,4 +1,4 @@
-import { AppShell, Container, Flex, Header, LoadingOverlay, Space, Tabs, Title } from '@mantine/core';
+import { AppShell, Flex, Header, LoadingOverlay, Paper, Tabs, Title } from '@mantine/core';
 import { SuggestionReviewer } from '../components/SuggestionReviewer';
 import { useEffect, useState } from 'react';
 import { Suggestion } from '../util/types';
@@ -45,9 +45,9 @@ export const DocuSync = () => {
     return (<>
         <AppShell padding="md"
             header={<Header height={60}>
-                <Container py="sm" px="sm">
+                <Paper py="sm" px="sm" shadow='xs'>
                     <Title>DocuSync</Title>
-                </Container>
+                </Paper>
             </Header>}
         >
             <Flex>
