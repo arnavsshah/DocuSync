@@ -32,13 +32,7 @@ export const DocuSync = () => {
 
     useEffect(() => {
         fetchSuggestions().then((suggestions) => {
-            setSuggestions([
-                ...suggestions, 
-                ...[{
-                    ...suggestions[0],
-                    newDocText: 'terrible suggestion'
-                }],
-                ...suggestions]);
+            setSuggestions(suggestions);
             setIsLoaded(true);
         });
     }, [setSuggestions]);
@@ -54,7 +48,8 @@ export const DocuSync = () => {
                 <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}>
                     <Tabs.List>
                         {suggestions.map((suggestion, idx) => (
-                            <Tabs.Tab value={`${idx}`}>Suggestion {idx} ({suggestion.question})</Tabs.Tab>
+                            <Tabs.Tab value={`${idx}`}>Suggestion {idx}</Tabs.Tab>
+                            // ({suggestion.question})
                         ))}
                     </Tabs.List>
                 </Tabs>
