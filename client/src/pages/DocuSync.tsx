@@ -121,7 +121,7 @@ export const DocuSync = () => {
             </Header>
             }
         >   
-            <Banner/>
+            <Banner numOpportunities={isLoaded ? suggestions.length.toString() : '...'}/>
             <Flex>
                 <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}
                     style={{
