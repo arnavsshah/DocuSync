@@ -15,7 +15,7 @@ def get_suggestions():
     for obj in cursor:
         del obj['_id']
         
-        if obj['pending'] & 'answer' not in obj:
+        if obj['pending'] and 'answer' in obj:
             data.append(obj)
 
     return {'suggestions': data}
