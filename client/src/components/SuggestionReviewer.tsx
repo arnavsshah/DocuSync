@@ -1,4 +1,4 @@
-import { Button, Flex, Group, Paper, Space, Stack } from "@mantine/core";
+import { Anchor, Button, Flex, Group, Paper, Space, Stack, Text } from "@mantine/core";
 import { DocDiffViewer } from "./DocDiffViewer";
 import { Suggestion } from "../util/types";
 
@@ -13,14 +13,17 @@ export const SuggestionReviewer = (props: {
             <DocDiffViewer oldText={suggestion.oldDocText} newText={suggestion.newDocText}></DocDiffViewer>
             <Space h="xl"/>
             <Flex align="flex-end" gap="md">
-                <Stack style={{flexGrow: 1}}>
+                {/* <Stack style={{flexGrow: 1}}>
                     <Paper>
                         Q: {suggestion.question}
                     </Paper>
                     <Paper h="sm">
                         A: {suggestion.answer}
                     </Paper>
-                </Stack>
+                </Stack> */}
+                <div style={{flexGrow: 1, display: 'flex', alignItems: 'center', height: '36px'}}>
+                    <Text sx={{textAlign: 'center'}}>Source: <Anchor href={`/community#${suggestion.suggestion_id}`} target="_blank">Gmail Help Community</Anchor></Text>
+                </div>
                 <Button color='green' onClick={() => {onApprove(suggestion)}}>Approve Change</Button>
                 <Button color='red' onClick={() => {onReject(suggestion)}}>Reject Change</Button>
             </Flex>

@@ -36,7 +36,7 @@ export const QuestionAnswer = (props: {
     }
 
     return (<>
-        <Paper elevation={2} sx={{
+        <Paper id={suggestion_id} elevation={2} sx={{
             maxWidth: '800px',//width:'50%',
             marginLeft: 'auto',
             marginRight: 'auto',
