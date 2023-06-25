@@ -19,10 +19,21 @@ export const Community = () => {
     const [posts, setPosts] = useState<QA[]>([]);
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
+    const navigateToElement = () => {
+        const { hash } = window.location;
+        if (hash) {
+          const element = document.getElementById(hash.substring(1));
+          if (element) {
+            element.scrollIntoView();
+          }
+        }
+      };
+
     useEffect(() => {
         fetchPosts().then((posts) => {
             setPosts(posts);
             setIsLoaded(true);
+            navigateToElement();
         });
     }, [setPosts]);
 
