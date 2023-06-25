@@ -28,7 +28,7 @@ def get_questions_and_answers():
              "suggestion_id": obj['suggestion_id']}
         )
 
-    return data
+    return {'data': data}
 
 
 @bp.route('/questions', methods=['POST'])
@@ -57,7 +57,6 @@ def post_questions():
 @bp.route('/answers', methods=['POST'])
 @cross_origin()
 def post_answers():
-
     answer = request.form.get('answer')
 
     suggestions_collection = db["suggestions"]

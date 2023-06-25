@@ -57,7 +57,7 @@ export const DocuSync = () => {
                 {isLoaded ? 
                     suggestions.length ? 
                         <SuggestionReviewer suggestion={suggestions[activeSuggestionIdx]}/>
-                    : <Title>No more suggestions!</Title>
+                    : <Title order={3}>No more suggestions!</Title>
                 : <LoadingOverlay visible={true}/>}
             </Flex>
         </AppShell>
