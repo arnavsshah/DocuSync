@@ -4,3 +4,8 @@ export interface Suggestion {
     question: string,
     answer: string
 }
+
+export interface QA {
+    question: string,
+    answer?: string
+}
