@@ -75,7 +75,7 @@ def post_answers():
     prompt = init_prompt + documentation['doc'] + question_prefix + suggestion['question'] + answer_prefix + answer + final_prompt
 
     conversation = [{"role": "user", "content": prompt}]
-    new_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation).choices[0].message.content
+    new_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation, temperature=0).choices[0].message.content
 
     to_update = {
         'answer': answer,
