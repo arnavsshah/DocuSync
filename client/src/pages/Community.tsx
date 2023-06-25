@@ -10,7 +10,8 @@ const fetchPosts = async (): Promise<QA[]> => {
     const posts = resp.data.data;
     return posts.map((post: any) => ({
         question: post.question,
-        answer: post.answer // TODO take ID
+        answer: post.answer,
+        suggestion_id: post.suggestion_id
     }));
 }
 

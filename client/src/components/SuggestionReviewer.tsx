@@ -2,8 +2,12 @@ import { Button, Flex, Group, Paper, Space, Stack } from "@mantine/core";
 import { DocDiffViewer } from "./DocDiffViewer";
 import { Suggestion } from "../util/types";
 
-export const SuggestionReviewer = (props: {suggestion: Suggestion}) => {
-    const { suggestion } = props;
+export const SuggestionReviewer = (props: {
+    suggestion: Suggestion,
+    onApprove: (suggestion: Suggestion) => void,
+    onReject: (suggestion: Suggestion) => void
+}) => {
+    const { suggestion, onApprove, onReject } = props;
     return (<>
         <Paper shadow="md" p="md" style={{flexGrow: 1}}>
             <DocDiffViewer oldText={suggestion.oldDocText} newText={suggestion.newDocText}></DocDiffViewer>
@@ -17,8 +21,8 @@ export const SuggestionReviewer = (props: {suggestion: Suggestion}) => {
                         A: {suggestion.answer}
                     </Paper>
                 </Stack>
-                <Button color='green'>Approve Change</Button>
-                <Button color='red'>Reject Change</Button>
+                <Button color='green' onClick={() => {onApprove(suggestion)}}>Approve Change</Button>
+                <Button color='red' onClick={() => {onReject(suggestion)}}>Reject Change</Button>
             </Flex>
         </Paper>
     </>);

@@ -31,7 +31,7 @@ def get_questions_and_answers():
     return {'data': data}
 
 
-@bp.route('/questions', methods=['POST'])
+@bp.route('/questions/', methods=['POST'])
 @cross_origin()
 def post_questions():
 
@@ -54,7 +54,7 @@ def post_questions():
 
 
 
-@bp.route('/answers', methods=['POST'])
+@bp.route('/answers/', methods=['POST'])
 @cross_origin()
 def post_answers():
 

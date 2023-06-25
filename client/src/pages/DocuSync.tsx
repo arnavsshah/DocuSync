@@ -14,11 +14,42 @@ const fetchSuggestions = async (): Promise<Suggestion[]> => {
             oldDocText: suggestion.old_doc,
             newDocText: suggestion.new_doc,
             question: suggestion.question,
-            answer: suggestion.answer
+            answer: suggestion.answer,
+            suggestion_id: suggestion.suggestion_id,
+            doc_id: suggestion.doc_id
         })
     );
     return convertedSuggestions;
 }
+
+// const acceptChange = async (suggestion: Suggestion) => {
+//     console.log('accepting change: ', suggestion);
+//     await axios.post('http://localhost:5000/suggestions/', {
+//         suggestion_id: suggestion.suggestion_id,
+//         doc_id: suggestion.doc_id,
+//         new_doc: suggestion.newDocText
+//     },
+//     {
+//         headers: {
+//             "Content-Type": 'application/json'
+//         }
+//     });
+//     //refreshSuggestions();
+// }
+
+// // TODO reject change
+// const rejectChange = async (suggestion: Suggestion) => {
+//     console.log('rejecting change: ', suggestion);
+//     await axios.post('http://localhost:5000/suggestions/delete/', {
+//         suggestion_id: suggestion.suggestion_id
+//     },
+//     {
+//         headers: {
+//             "Content-Type": 'application/json'
+//         }
+//     });
+//     //refreshSuggestions();
+// }
 
 export const DocuSync = () => {
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -30,11 +61,44 @@ export const DocuSync = () => {
         setActiveSuggestionIdx(parseInt(tabValue));
     }
 
-    useEffect(() => {
+    const refreshSuggestions = () => {
+        setIsLoaded(false);
         fetchSuggestions().then((suggestions) => {
             setSuggestions(suggestions);
             setIsLoaded(true);
         });
+    }
+
+    const acceptChange = async (suggestion: Suggestion) => {
+        console.log('accepting change: ', suggestion);
+        await axios.post('http://localhost:5000/suggestions/', {
+            suggestion_id: suggestion.suggestion_id,
+            doc_id: suggestion.doc_id,
+            new_doc: suggestion.newDocText
+        },
+        {
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        });
+        refreshSuggestions();
+    }
+    
+    const rejectChange = async (suggestion: Suggestion) => {
+        console.log('rejecting change: ', suggestion);
+        await axios.post('http://localhost:5000/suggestions/delete/', {
+            suggestion_id: suggestion.suggestion_id
+        },
+        {
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        });
+        refreshSuggestions();
+    }
+
+    useEffect(() => {
+        refreshSuggestions();
     }, [setSuggestions]);
     return (<>
         <AppShell padding="md"
@@ -56,7 +120,7 @@ export const DocuSync = () => {
 
                 {isLoaded ? 
                     suggestions.length ? 
-                        <SuggestionReviewer suggestion={suggestions[activeSuggestionIdx]}/>
+                        <SuggestionReviewer suggestion={suggestions[activeSuggestionIdx]} onApprove={acceptChange} onReject={rejectChange}/>
                     : <Title order={3}>No more suggestions!</Title>
                 : <LoadingOverlay visible={true}/>}
             </Flex>

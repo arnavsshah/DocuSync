@@ -25,11 +25,22 @@ def get_suggestions():
 @cross_origin()
 def post_suggestions():
 
-    db['documentation'].updateOne(
+    db['documentation'].update_one(
         {'doc_id': int(request.json['doc_id'])},  {'$set': {"doc": request.json['new_doc']}}
     )
 
-    db['suggestions'].updateOne(
+    db['suggestions'].update_one(
+        {'suggestion_id': request.json['suggestion_id']}, {'$set': {"pending": False}}
+    )
+
+    return 'Success', 200
+
+
+@bp.route('/delete/', methods=['POST'])
+@cross_origin()
+def delete_suggestions():
+
+    db['suggestions'].update_one(
         {'suggestion_id': request.json['suggestion_id']}, {'$set': {"pending": False}}
     )
 
