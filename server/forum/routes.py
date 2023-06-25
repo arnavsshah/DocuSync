@@ -28,7 +28,7 @@ def get_questions_and_answers():
              "suggestion_id": obj['suggestion_id']}
         )
 
-    return data
+    return {'data': data}
 
 
 @bp.route('/questions', methods=['POST'])
@@ -37,8 +37,8 @@ def post_questions():
 
     suggestions_collection = db["suggestions"]
 
-    doc_id = int(request.form.get('doc_id'))
-    question = request.form.get('question')
+    doc_id = int(request.json['doc_id'])
+    question = request.json['question']
 
     to_insert = {
         'suggestion_id': str(uuid.uuid4()),
@@ -58,12 +58,12 @@ def post_questions():
 @cross_origin()
 def post_answers():
 
-    answer = request.form.get('answer')
+    answer = request.json['answer']
 
     suggestions_collection = db["suggestions"]
     documentations_collection = db['documentation']
     
-    suggestion = suggestions_collection.find_one({'suggestion_id': request.form.get('suggestion_id')})
+    suggestion = suggestions_collection.find_one({'suggestion_id': request.json['suggestion_id']})
     documentation = documentations_collection.find_one({'doc_id': suggestion['doc_id']})
 
     init_prompt = "Update the following markdown text only in areas where there are changes required based on the question and answer following it: "
@@ -88,46 +88,3 @@ def post_answers():
         )
 
     return 'Success', 200
-
-
-
-
-@bp.route('/postman', methods=['POST'])
-@cross_origin()
-def post_questions_and_answers():
-
-    suggestions_collection = db["suggestions"]
-
-    init_prompt = "This is the text which I would like you to update: "
-    question_prefix = 'The question is: '
-    answer_prefix = 'The answer is: '
-    final_prompt = 'Update my document with this information and return the whole text'
-
-    doc_id = int(request.form.get('doc_id'))
-
-    with open('documentations/gmail.txt', 'r') as f:
-        doc = f.read()
-
-    question = request.form.get('question')
-    answer = request.form.get('answer')
-
-    prompt = init_prompt + doc + question_prefix + question + answer_prefix + answer + final_prompt
-
-
-    conversation = [{"role": "user", "content": prompt}]
-    new_doc = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=conversation).choices[0].message.content
-
-    to_insert = {
-        'suggestion_id': str(uuid.uuid4()),
-        'question': question,
-        'answer': answer,
-        'old_doc': doc,
-        'new_doc': new_doc,
-        'date': datetime.today().replace(microsecond=0),
-        'doc_id': doc_id,
-        'pending': True
-    }
-    
-    suggestions_collection.insert_one(to_insert)
-
-    return redirect('/forum')

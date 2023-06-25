@@ -10,18 +10,10 @@ from db import db
 @cross_origin()
 def get_documentation():
 
-    documentation = db['documentation'].find_one({'doc_id': 1})
+    cursor = db['documentation'].find()
+    data = []
 
-    return documentation['doc']
+    for documentation in cursor:
+        data.append(documentation['doc'])
 
-
-@bp.route('/<int:param>/', methods=['GET'])
-@cross_origin()
-def get_documentation_by_index(param):
-
-    if param > 3:
-        return redirect('/')
-
-    documentation = db['documentation'].find_one({'doc_id': param})
-
-    return documentation['doc']
+    return {'data': data}

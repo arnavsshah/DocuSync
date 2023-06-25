@@ -3,7 +3,7 @@ Question 1: I cannot find the Inbox Button?
 Answer 1: The new update suggests that the Inbox button was changed to Mail button
 
 Question 2: How many security questions will I be asked in order to reset my password?
-Answer 2:    The new update suggests the user will be asked 3 questions.
+Answer 2: The new update suggests the user will be asked 3 questions.
 
 
 Topic: Restore a user's permanently deleted email

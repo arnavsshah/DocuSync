@@ -26,11 +26,11 @@ def get_suggestions():
 def post_suggestions():
 
     db['documentation'].updateOne(
-        {'doc_id': int(request.form.get('doc_id'))},  {'$set': {"doc": request.form.get('new_doc')}}
+        {'doc_id': int(request.json['doc_id'])},  {'$set': {"doc": request.json['new_doc']}}
     )
 
     db['suggestions'].updateOne(
-        {'suggestion_id': request.form.get('suggestion_id')}, {'$set': {"pending": False}}
+        {'suggestion_id': request.json['suggestion_id']}, {'$set': {"pending": False}}
     )
 
     return 'Success', 200
