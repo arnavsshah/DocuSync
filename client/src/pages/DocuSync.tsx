@@ -3,6 +3,7 @@ import { SuggestionReviewer } from '../components/SuggestionReviewer';
 import { useEffect, useState } from 'react';
 import { Suggestion } from '../util/types';
 import axios from 'axios';
+import Banner from '../components/Banner';
 
 const fetchSuggestions = async (): Promise<Suggestion[]> => {
     const resp = await axios.get('http://localhost:5000/suggestions/');
@@ -102,7 +103,8 @@ export const DocuSync = () => {
     }, [setSuggestions]);
     return (<>
         <AppShell padding="md"
-            header={<Header height={60}>
+            header={
+            <Header height={60}>
                 <Paper py="sm" px="sm" shadow='xs'>
                     <Flex style={{alignItems: 'center'}}>
                         <Burger opened={false} style={{marginRight: '8px'}}/>
@@ -116,8 +118,10 @@ export const DocuSync = () => {
                         </Paper>
                     </Flex>
                 </Paper>
-            </Header>}
-        >
+            </Header>
+            }
+        >   
+            <Banner text="Welcome to DocuSync!\nBelow you can see suggestions to existing documentation based on community activity.\nOnce you review each suggestion, click Approve to make the change to the documentation, or Reject to remove the suggestion."/>
             <Flex>
                 <Tabs variant="outline" orientation="vertical" defaultValue='0' onTabChange={setActiveTab}
                     style={{
@@ -128,9 +132,9 @@ export const DocuSync = () => {
                         {suggestions.map((suggestion, idx) => (
                             <Tabs.Tab value={`${idx}`}>
                                 {idx === activeSuggestionIdx ?
-                                <Text color='blue' fw={700}>Suggestion {idx}</Text>
+                                <Text color='blue' fw={700}>Suggestion {idx+1}</Text>
                                 :
-                                <Text>Suggestion {idx}</Text>
+                                <Text>Suggestion {idx+1}</Text>
                                 }
                             </Tabs.Tab>
                         ))}
