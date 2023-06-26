@@ -55,8 +55,11 @@ python app.py
 cd ..
 ```
 
-#### Go to [localhost:3000](http://localhost:3000/)
+Go to [localhost:3000](http://localhost:3000/)
 
+![DocuSync](/docusync.jpg)
+
+[Devpost Entry for the HackerDojo Generative AI hackathon](https://devpost.com/software/docusync-w4c930)
 
 ###### Additional
 - You can use the `server/direct_db_edits/reset_pending.py` script to get back all accepted suggestions (sets `pending` to True so that it is displayed in the diff screen)
